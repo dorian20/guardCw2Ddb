@@ -1,0 +1,73 @@
+#
+# DynamoDB Schema description
+#
+# - GUADR_DETECT
+#
+{
+    "Table": {
+        "TableArn": "arn:aws:dynamodb:ap-northeast-2:XXX:table/GUARD_DETECT", 
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "actionTime", 
+                "AttributeType": "S"
+            }, 
+            {
+                "AttributeName": "id", 
+                "AttributeType": "S"
+            }, 
+            {
+                "AttributeName": "type", 
+                "AttributeType": "S"
+            }
+        ], 
+        "GlobalSecondaryIndexes": [
+            {
+                "IndexSizeBytes": 1313546, 
+                "IndexName": "GAURD_DETECT_type_actionTime_GSI_01", 
+                "Projection": {
+                    "ProjectionType": "ALL"
+                }, 
+                "ProvisionedThroughput": {
+                    "NumberOfDecreasesToday": 0, 
+                    "WriteCapacityUnits": 5, 
+                    "ReadCapacityUnits": 5
+                }, 
+                "IndexStatus": "ACTIVE", 
+                "KeySchema": [
+                    {
+                        "KeyType": "HASH", 
+                        "AttributeName": "type"
+                    }, 
+                    {
+                        "KeyType": "RANGE", 
+                        "AttributeName": "actionTime"
+                    }
+                ], 
+                "IndexArn": "arn:aws:dynamodb:ap-northeast-2:XXX:table/GUARD_DETECT/index/GAURD_DETECT_type_actionTime_GSI_01", 
+                "ItemCount": 621
+            }
+        ], 
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0, 
+            "WriteCapacityUnits": 5, 
+            "ReadCapacityUnits": 5
+        }, 
+        "TableSizeBytes": 1313546, 
+        "TableName": "GUARD_DETECT", 
+        "TableStatus": "ACTIVE", 
+        "StreamSpecification": {
+            "StreamViewType": "NEW_AND_OLD_IMAGES", 
+            "StreamEnabled": true
+        }, 
+        "LatestStreamLabel": "2018-08-01T04:55:03.373", 
+        "KeySchema": [
+            {
+                "KeyType": "HASH", 
+                "AttributeName": "id"
+            }
+        ], 
+        "ItemCount": 621, 
+        "CreationDateTime": 1532674605.548, 
+        "LatestStreamArn": "arn:aws:dynamodb:ap-northeast-2:XXX:table/GUARD_DETECT/stream/2018-08-01T04:55:03.373"
+    }
+}
