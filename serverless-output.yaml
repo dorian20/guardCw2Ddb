@@ -1,14 +1,23 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: An AWS Serverless Specification template describing your function.
 Resources:
-  GuardCW2DDB:
+  GuardDetectCW2DDB:
     Properties:
-      CodeUri: s3://elltdev.lambda.lotte.net/26a40178fd1f9be56ebe8de91ebb0216
+      CodeUri: s3://elltdev.lambda.lotte.net/aaeab5cc0cdda159f04a35f26705214d
       Description: ''
       Environment:
         Variables:
           DEBUG_LOG: true
-      FunctionName: GUARD-CW-2-DDB
+      Events:
+        CloudWatchEvent1:
+          Properties:
+            Pattern:
+              detail-type:
+              - GuardDuty Finding
+              source:
+              - aws.guardduty
+          Type: CloudWatchEvent
+      FunctionName: GUARD-DETECT-CW-2-DDB
       Handler: index.handler
       MemorySize: 128
       Role: arn:aws:iam::515303172277:role/LambdaExecute

@@ -1,5 +1,5 @@
 {
-  "name": "guard-cw-2-ddb",
+  "name": "guard-detect-cw-2-ddb",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "@yangjs",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "moment-timezone": "^0.5.21"
+  }
 }
